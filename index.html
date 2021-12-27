@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="”en”">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Controle</title>
+
+    <style>body{background-color: #9c2525;}</style>
+  </head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: 'AIzaSyD2r4Ca8uxX_c8AcAV0Pcc1jiMurN3Iq5s',
+      authDomain: 'web-html-8cc81.firebaseapp.com',
+      databaseURL: 'https://web-html-8cc81-default-rtdb.firebaseio.com',
+      projectId: 'web-html-8cc81',
+      storageBucket: 'web-html-8cc81.appspot.com',
+      messagingSenderId: '375327429502',
+      appId: '1:375327429502:web:12c778b08ac07e4e9a992f',
+      measurementId: 'G-TTCJ2VGRKE'
+    }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    // var database = firebase.database()
+
+    function ledOn() {
+      firebase.database().ref('SALA').set({
+        estado: 'LIGADA'
+      })
+    }
+    function ledOff() {
+      firebase.database().ref('SALA').set({
+        estado: 'DESLIGADA'
+      })
+    }
+
+    function ledOn1() {
+      firebase.database().ref('QUARTO1').set({
+        estado: 'LIGADA'
+      })
+    }
+    function ledOff1() {
+      firebase.database().ref('QUARTO1').set({
+        estado: 'DESLIGADA'
+      })
+    }
+
+    function ledOn2() {
+      firebase.database().ref('QUARTO2').set({
+        estado: 'LIGADA'
+      })
+    }
+    function ledOff2() {
+      firebase.database().ref('QUARTO2').set({
+        estado: 'DESLIGADA'
+      })
+    }
+    function ledOn0() {
+      firebase.database().ref('VARANDA').set({
+        estado: 'LIGADA'
+      })
+    }
+    function ledOff0() {
+      firebase.database().ref('VARANDA').set({
+        estado: 'DESLIGADA'
+      })
+    }
+  </script>
+  <script src="app.js" defer></script>
+  <body>
+    <center>
+    <img src="logo_uem.jpeg" width="120" />
+    <h2>Universidade Eduardo Mondlane</h2>
+    <h2>Faculdade de Engenharia</h2>
+    <h2>Licenciatura em Engenharia Electrónica</h2>
+    <h2>Projecto do Curso</h2>
+    <h2>Autor: Mauro Miguel Martins</h2>
+    <h2>AUTOMAÇÃO RESIDENCIAL</h2>
+  </center>
+    <fieldset>
+      <legend>Sala</legend>
+      <p>
+        <button onclick="ledOn()">Ligar</button>
+        <button onclick="ledOff()">Desligar</button>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Quarto 1</legend>
+      <p>
+        <button onclick="ledOn1()">Ligar</button>
+        <button onclick="ledOff1()">Desligar</button>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Quarto 2</legend>
+      <p>
+        <button onclick="ledOn2()">Ligar</button>
+        <button onclick="ledOff2()">Desligar</button>
+      </p>
+    </fieldset>
+    <fieldset>
+      <legend>Varanda</legend>
+      <p>
+        <button onclick="ledOn0()">Ligar</button>
+        <button onclick="ledOff0()">Desligar</button>
+      </p>
+    </fieldset>
+  </body>
+</html>
