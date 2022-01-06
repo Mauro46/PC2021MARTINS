@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Controle</title>
-
-    <style>body{background-color: #9c2525;}</style>
   </head>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -14,100 +13,110 @@
   <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
   <script>
     var firebaseConfig = {
-      apiKey: "AIzaSyCBmDz08vTUAkgIrTh5pAClX02ZPLvYxQ8",
-  authDomain: "pc2021uem.firebaseapp.com",
-  databaseURL: "https://pc2021uem-default-rtdb.firebaseio.com",
-  projectId: "pc2021uem",
-  storageBucket: "pc2021uem.appspot.com",
-  messagingSenderId: "232296789649",
-  appId: "1:232296789649:web:c77ddb6974e39536783130",
-  measurementId: "G-CGXW70YRS8"
-    }
+      apiKey: "AIzaSyD2r4Ca8uxX_c8AcAV0Pcc1jiMurN3Iq5s",
+      authDomain: "web-html-8cc81.firebaseapp.com",
+      databaseURL: "https://web-html-8cc81-default-rtdb.firebaseio.com",
+      projectId: "web-html-8cc81",
+      storageBucket: "web-html-8cc81.appspot.com",
+      messagingSenderId: "375327429502",
+      appId: "1:375327429502:web:12c778b08ac07e4e9a992f",
+      measurementId: "G-TTCJ2VGRKE",
+    };
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig)
+    firebase.initializeApp(firebaseConfig);
     // var database = firebase.database()
 
     function ledOn() {
-      firebase.database().ref('SALA').set({
-        estado: 'LIGADA'
-      })
+      firebase.database().ref("SALA").set({
+        estado: "LIGADA",
+      });
     }
     function ledOff() {
-      firebase.database().ref('SALA').set({
-        estado: 'DESLIGADA'
-      })
+      firebase.database().ref("SALA").set({
+        estado: "DESLIGADA",
+      });
     }
 
     function ledOn1() {
-      firebase.database().ref('QUARTO1').set({
-        estado: 'LIGADA'
-      })
+      firebase.database().ref("QUARTO1").set({
+        estado: "LIGADA",
+      });
     }
     function ledOff1() {
-      firebase.database().ref('QUARTO1').set({
-        estado: 'DESLIGADA'
-      })
+      firebase.database().ref("QUARTO1").set({
+        estado: "DESLIGADA",
+      });
     }
 
     function ledOn2() {
-      firebase.database().ref('QUARTO2').set({
-        estado: 'LIGADA'
-      })
+      firebase.database().ref("QUARTO2").set({
+        estado: "LIGADA",
+      });
     }
     function ledOff2() {
-      firebase.database().ref('QUARTO2').set({
-        estado: 'DESLIGADA'
-      })
+      firebase.database().ref("QUARTO2").set({
+        estado: "DESLIGADA",
+      });
     }
     function ledOn0() {
-      firebase.database().ref('VARANDA').set({
-        estado: 'LIGADA'
-      })
+      firebase.database().ref("VARANDA").set({
+        estado: "LIGADA",
+      });
     }
     function ledOff0() {
-      firebase.database().ref('VARANDA').set({
-        estado: 'DESLIGADA'
-      })
+      firebase.database().ref("VARANDA").set({
+        estado: "DESLIGADA",
+      });
     }
   </script>
   <script src="app.js" defer></script>
   <body>
-    <center>
-    <img src="logo_uem.jpeg" width="120" />
-    <h2>Universidade Eduardo Mondlane</h2>
-    <h2>Faculdade de Engenharia</h2>
-    <h2>Licenciatura em Engenharia Electrónica</h2>
-    <h2>Projecto do Curso</h2>
-    <h2>Autor: Mauro Miguel Martins</h2>
-    <h2>AUTOMAÇÃO RESIDENCIAL</h2>
-  </center>
-    <fieldset>
-      <legend>Sala</legend>
-      <p>
-        <button onclick="ledOn()">Ligar</button>
-        <button onclick="ledOff()">Desligar</button>
-      </p>
-    </fieldset>
-    <fieldset>
-      <legend>Quarto 1</legend>
-      <p>
-        <button onclick="ledOn1()">Ligar</button>
-        <button onclick="ledOff1()">Desligar</button>
-      </p>
-    </fieldset>
-    <fieldset>
-      <legend>Quarto 2</legend>
-      <p>
-        <button onclick="ledOn2()">Ligar</button>
-        <button onclick="ledOff2()">Desligar</button>
-      </p>
-    </fieldset>
-    <fieldset>
-      <legend>Varanda</legend>
-      <p>
-        <button onclick="ledOn0()">Ligar</button>
-        <button onclick="ledOff0()">Desligar</button>
-      </p>
-    </fieldset>
+    <header class="container">
+      <img src="logo_uem.jpg" width="120" />
+      <h2>Faculdade de Engenharia</h2>
+      <h2>Licenciatura em Engenharia Electrónica</h2>
+      <h2>Projecto do Curso</h2>
+    </header>
+
+    <main class="container">
+      <h1>AUTOMAÇÃO RESIDENCIAL</h1>
+      <form action="">
+        <fieldset>
+          <legend>Sala</legend>
+          <div>
+            <button class="led-on" onclick="ledOn()">Ligar</button>
+            <button class="led-off" onclick="ledOff()">Desligar</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Quarto 1</legend>
+          <div>
+            <button class="led-on" onclick="ledOn1()">Ligar</button>
+            <button class="led-off" onclick="ledOff1()">Desligar</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Quarto 2</legend>
+          <div>
+            <button class="led-on" onclick="ledOn2()">Ligar</button>
+            <button class="led-off" onclick="ledOff2()">Desligar</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Varanda</legend>
+          <div>
+            <button class="led-on" onclick="ledOn0()">Ligar</button>
+            <button class="led-off" onclick="ledOff0()">Desligar</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <p>Autor: <strong>Mauro Miguel Martins</strong></p>
+    </footer>
   </body>
 </html>
