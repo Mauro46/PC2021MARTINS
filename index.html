@@ -13,66 +13,66 @@
   <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
   <script>
     var firebaseConfig = {
-      apiKey: "AIzaSyCBmDz08vTUAkgIrTh5pAClX02ZPLvYxQ8",
-      authDomain: "pc2021uem.firebaseapp.com",
-      databaseURL: "https://pc2021uem-default-rtdb.firebaseio.com",
-      projectId: "pc2021uem",
-      storageBucket: "pc2021uem.appspot.com",
-      messagingSenderId: "232296789649",
-      appId: "1:232296789649:web:c77ddb6974e39536783130",
-      measurementId: "G-CGXW70YRS8",
-    };
+      apiKey: 'AIzaSyCBmDz08vTUAkgIrTh5pAClX02ZPLvYxQ8',
+      authDomain: 'pc2021uem.firebaseapp.com',
+      databaseURL: 'https://pc2021uem-default-rtdb.firebaseio.com',
+      projectId: 'pc2021uem',
+      storageBucket: 'pc2021uem.appspot.com',
+      messagingSenderId: '232296789649',
+      appId: '1:232296789649:web:c77ddb6974e39536783130',
+      measurementId: 'G-CGXW70YRS8'
+    }
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig)
     // var database = firebase.database()
 
     function ledOn() {
-      firebase.database().ref("SALA").set({
-        estado: "LIGADA",
-      });
+      firebase.database().ref('SALA').set({
+        estado: 'LIGADA'
+      })
     }
     function ledOff() {
-      firebase.database().ref("SALA").set({
-        estado: "DESLIGADA",
-      });
+      firebase.database().ref('SALA').set({
+        estado: 'DESLIGADA'
+      })
     }
 
     function ledOn1() {
-      firebase.database().ref("QUARTO1").set({
-        estado: "LIGADA",
-      });
+      firebase.database().ref('QUARTO1').set({
+        estado: 'LIGADA'
+      })
     }
     function ledOff1() {
-      firebase.database().ref("QUARTO1").set({
-        estado: "DESLIGADA",
-      });
+      firebase.database().ref('QUARTO1').set({
+        estado: 'DESLIGADA'
+      })
     }
 
     function ledOn2() {
-      firebase.database().ref("QUARTO2").set({
-        estado: "LIGADA",
-      });
+      firebase.database().ref('QUARTO2').set({
+        estado: 'LIGADA'
+      })
     }
     function ledOff2() {
-      firebase.database().ref("QUARTO2").set({
-        estado: "DESLIGADA",
-      });
+      firebase.database().ref('QUARTO2').set({
+        estado: 'DESLIGADA'
+      })
     }
     function ledOn0() {
-      firebase.database().ref("VARANDA").set({
-        estado: "LIGADA",
-      });
+      firebase.database().ref('VARANDA').set({
+        estado: 'LIGADA'
+      })
     }
     function ledOff0() {
-      firebase.database().ref("VARANDA").set({
-        estado: "DESLIGADA",
-      });
+      firebase.database().ref('VARANDA').set({
+        estado: 'DESLIGADA'
+      })
     }
   </script>
   <script src="app.js" defer></script>
   <body>
     <header class="container">
-      <img src="logo.jpg" width="120" />
+      <img src="logo_uem.jpg" width="120" />
       <h2>Faculdade de Engenharia</h2>
       <h2>Licenciatura em Engenharia Electrónica</h2>
       <h2>Projecto do Curso</h2>
