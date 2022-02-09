@@ -11,8 +11,8 @@
    ==================================================================================================*/#include <ESP8266WiFi.h>
 #include<FirebaseArduino.h>
 
-#define FIREBASE_HOST "web-html-8cc81-default-rtdb.firebaseio.com"
-#define FIREBASE_AUTH "wFhTUprtFn5w1eSoLTwcrI9LX4yE4fidzKNEVclo"
+#define FIREBASE_HOST "pc2021uem-default-rtdb.firebaseio.com"
+#define FIREBASE_AUTH "Ydebf6woUcnDC7ep4VVSccmJvEnWTe24eEtDGhH0"
 #define WIFI_SSID "Redmi Note 10S"
 #define WIFI_PASSWORD "111333@5@5"
 
