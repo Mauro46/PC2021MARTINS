@@ -11,24 +11,22 @@
    ==================================================================================================*/#include <ESP8266WiFi.h>
 #include<FirebaseArduino.h>
 
-<<<<<<< HEAD
 #define FIREBASE_HOST "pc2021uem-default-rtdb.firebaseio.com"
 #define FIREBASE_AUTH "Ydebf6woUcnDC7ep4VVSccmJvEnWTe24eEtDGhH0"
-=======
-#define FIREBASE_HOST "web-html-8cc81-default-rtdb.firebaseio.com"
-#define FIREBASE_AUTH "wFhTUprtFn5w1eSoLTwcrI9LX4yE4fidzKNEVclo"
->>>>>>> ceca3e826cb7303f65904974dc0d96eda6224914
 #define WIFI_SSID "Redmi Note 10S"
 #define WIFI_PASSWORD "111333@5@5"
 
-const int sala = 1;
+const int Sala = 1;
 const int Quarto1 = 2;
 const int Quarto2 = 3;
 const int Varanda = 12;
 void setup()
 {
   Serial.begin(115200);
-  pinMode(LED, OUTPUT);
+  pinMode(Sala, OUTPUT);
+  pinMode(Quarto1, OUTPUT);
+  pinMode(Quarto2, OUTPUT);
+  pinMode(Varanda, OUTPUT);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("connecting");
   while (WiFi.status() != WL_CONNECTED)
@@ -56,15 +54,15 @@ void loop()
   FirebaseObject sala = Firebase.get(path);
   String LuzSala = sala.getString("estado");
   if (LuzSala == "LIGADA") {
-    digitalWrite(sala, HIGH);
+    digitalWrite(Sala, HIGH);
   }
   else if (LuzSala == "DESLIGADA") {
-    digitalWrite(sala, LOW);
+    digitalWrite(Sala, LOW);
   }
 
-  String path = "/Quarto1/";
+  //String path = "/Quarto1/";
   FirebaseObject quarto1 = Firebase.get(path);
-  String LuzSala = quarto1.getString("estado");
+  String LuzQuarto1 = quarto1.getString("estado");
   if (LuzQuarto1 == "LIGADA") {
     digitalWrite(Quarto1, HIGH);
   }
@@ -72,11 +70,11 @@ void loop()
     digitalWrite(Quarto1, LOW);
   }
 
-  String path = "/Quarto2/";
+  //String path = "/Quarto2/";
   FirebaseObject quarto2 = Firebase.get(path);
-  String LuzSala = quarto2.getString("estado");
+  String LuzQuarto2 = quarto2.getString("estado");
   if (LuzQuarto2 == "LIGADA") {
-    digitalWrite(LED, HIGH);
+    digitalWrite(Quarto2, HIGH);
   }
   else if (LuzQuarto2 == "DESLIGADA") {
     digitalWrite(Quarto2, LOW);
