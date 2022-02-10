@@ -13,12 +13,14 @@
 
 #define FIREBASE_HOST "pc2021uem-default-rtdb.firebaseio.com"
 #define FIREBASE_AUTH "Ydebf6woUcnDC7ep4VVSccmJvEnWTe24eEtDGhH0"
-#define WIFI_SSID "Redmi Note 10S"
-#define WIFI_PASSWORD "111333@5@5"
+//#define WIFI_SSID "Redmi Note 10S"
+//#define WIFI_PASSWORD "111333@5@5"
+#define WIFI_SSID "CONTACTA DTICS"
+#define WIFI_PASSWORD "80624172"
 
-const int Sala = 1;
+const int Sala = 0;
 const int Quarto1 = 2;
-const int Quarto2 = 3;
+const int Quarto2 = 15;
 const int Varanda = 12;
 void setup()
 {
@@ -54,39 +56,38 @@ void loop()
   FirebaseObject sala = Firebase.get(path);
   String LuzSala = sala.getString("estado");
   if (LuzSala == "LIGADA") {
-    digitalWrite(Sala, HIGH);
-  }
-  else if (LuzSala == "DESLIGADA") {
     digitalWrite(Sala, LOW);
   }
+  else if (LuzSala == "DESLIGADA") {
+    digitalWrite(Sala, HIGH);
+  }
 
-  //String path = "/Quarto1/";
+  String path = "/Quarto1/";
   FirebaseObject quarto1 = Firebase.get(path);
   String LuzQuarto1 = quarto1.getString("estado");
   if (LuzQuarto1 == "LIGADA") {
-    digitalWrite(Quarto1, HIGH);
-  }
-  else if (LuzQuarto1 == "DESLIGADA") {
     digitalWrite(Quarto1, LOW);
   }
+  else if (LuzQuarto1 == "DESLIGADA") {
+    digitalWrite(Quarto1, HIGH);
+  }
 
-  //String path = "/Quarto2/";
+  String path = "/Quarto2/";
   FirebaseObject quarto2 = Firebase.get(path);
   String LuzQuarto2 = quarto2.getString("estado");
   if (LuzQuarto2 == "LIGADA") {
-    digitalWrite(Quarto2, HIGH);
+    digitalWrite(Quarto2, LOW);
   }
   else if (LuzQuarto2 == "DESLIGADA") {
-    digitalWrite(Quarto2, LOW);
+    digitalWrite(Quarto2, HIGH);
   }
 
   int sensorValue = analogRead(A0);
-  float voltage = sensorValue * (3.3 / 1024.0);
-  Serial.println(voltage);
-  if (voltage > 500) {
-    digitalWrite(Varanda, HIGH);
+  Serial.println(sensorValue);
+  if (sensorValue > 800) {
+    digitalWrite(Varanda, LOW);
   }
   else {
-    digitalWrite(Varanda, LOW);
+    digitalWrite(Varanda, HIGH);
   }
 }
