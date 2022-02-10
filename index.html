@@ -12,16 +12,16 @@
       https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
   <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyCBmDz08vTUAkgIrTh5pAClX02ZPLvYxQ8",
-  authDomain: "pc2021uem.firebaseapp.com",
-  databaseURL: "https://pc2021uem-default-rtdb.firebaseio.com",
-  projectId: "pc2021uem",
-  storageBucket: "pc2021uem.appspot.com",
-  messagingSenderId: "232296789649",
-  appId: "1:232296789649:web:787fda21134a79e6783130",
-  measurementId: "G-G9FDSQHVWD",
-};
+    var firebaseConfig = {
+      apiKey: 'AIzaSyCBmDz08vTUAkgIrTh5pAClX02ZPLvYxQ8',
+      authDomain: 'pc2021uem.firebaseapp.com',
+      databaseURL: 'https://pc2021uem-default-rtdb.firebaseio.com',
+      projectId: 'pc2021uem',
+      storageBucket: 'pc2021uem.appspot.com',
+      messagingSenderId: '232296789649',
+      appId: '1:232296789649:web:787fda21134a79e6783130',
+      measurementId: 'G-G9FDSQHVWD'
+    }
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig)
     // var database = firebase.database()
@@ -58,63 +58,43 @@ const firebaseConfig = {
         estado: 'DESLIGADA'
       })
     }
-    function ledOn0() {
-      firebase.database().ref('VARANDA').set({
-        estado: 'LIGADA'
-      })
-    }
-    function ledOff0() {
-      firebase.database().ref('VARANDA').set({
-        estado: 'DESLIGADA'
-      })
-    }
   </script>
   <script src="app.js" defer></script>
   <body>
     <header class="container">
       <img src="logo_uem.jpg" width="120" />
+      <h2>Universidade Eduardo Mondlane</h2>
       <h2>Faculdade de Engenharia</h2>
       <h2>Licenciatura em Engenharia Electrónica</h2>
       <h2>Projecto do Curso</h2>
     </header>
-
     <main class="container">
       <h1>AUTOMAÇÃO RESIDENCIAL</h1>
-      <form action="">
-        <fieldset>
-          <legend>Sala</legend>
-          <div>
-            <button class="led-on" onclick="ledOn()">Ligar</button>
-            <button class="led-off" onclick="ledOff()">Desligar</button>
-          </div>
-        </fieldset>
+      <fieldset>
+        <legend>Sala</legend>
+        <div>
+          <button class="led-on" onclick="ledOn()">Ligar</button>
+          <button class="led-off" onclick="ledOff()">Desligar</button>
+        </div>
+      </fieldset>
+      <br />
 
-        <fieldset>
-          <legend>Quarto 1</legend>
-          <div>
-            <button class="led-on" onclick="ledOn1()">Ligar</button>
-            <button class="led-off" onclick="ledOff1()">Desligar</button>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Quarto 2</legend>
-          <div>
-            <button class="led-on" onclick="ledOn2()">Ligar</button>
-            <button class="led-off" onclick="ledOff2()">Desligar</button>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Varanda</legend>
-          <div>
-            <button class="led-on" onclick="ledOn0()">Ligar</button>
-            <button class="led-off" onclick="ledOff0()">Desligar</button>
-          </div>
-        </fieldset>
-      </form>
+      <fieldset>
+        <legend>Quarto 1</legend>
+        <div>
+          <button class="led-on" onclick="ledOn1()">Ligar</button>
+          <button class="led-off" onclick="ledOff1()">Desligar</button>
+        </div>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Quarto 2</legend>
+        <div>
+          <button class="led-on" onclick="ledOn2()">Ligar</button>
+          <button class="led-off" onclick="ledOff2()">Desligar</button>
+        </div>
+      </fieldset>
     </main>
-
     <footer>
       <p>Autor: <strong>Mauro Miguel Martins</strong></p>
     </footer>
