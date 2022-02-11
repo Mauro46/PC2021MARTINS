@@ -52,8 +52,8 @@ void setup()
 }
 void loop()
 {
-  String path = "/SALA/";
-  FirebaseObject sala = Firebase.get(path);
+ // String path = "/SALA/";
+  FirebaseObject sala = Firebase.get(/SALA/);
   String LuzSala = sala.getString("estado");
   if (LuzSala == "LIGADA") {
     digitalWrite(Sala, LOW);
@@ -62,8 +62,8 @@ void loop()
     digitalWrite(Sala, HIGH);
   }
 
-  String path = "/Quarto1/";
-  FirebaseObject quarto1 = Firebase.get(path);
+ // String path = "/Quarto1/";
+  FirebaseObject quarto1 = Firebase.get(/Quarto1/);
   String LuzQuarto1 = quarto1.getString("estado");
   if (LuzQuarto1 == "LIGADA") {
     digitalWrite(Quarto1, LOW);
@@ -72,8 +72,8 @@ void loop()
     digitalWrite(Quarto1, HIGH);
   }
 
-  String path = "/Quarto2/";
-  FirebaseObject quarto2 = Firebase.get(path);
+  //String path = "/Quarto2/";
+  FirebaseObject quarto2 = Firebase.get(/Quarto2/);
   String LuzQuarto2 = quarto2.getString("estado");
   if (LuzQuarto2 == "LIGADA") {
     digitalWrite(Quarto2, LOW);
